@@ -1,6 +1,18 @@
 import type { Config } from "tailwindcss";
 
+const category_colors: string[] = [
+  "#ff0000",
+  "#00ff00",
+  "#0000ff",
+];
+
 const config: Config = {
+  purge: {
+    safelist: [
+      ...category_colors.map((color) => `bg-${color}`)
+    ],
+  },
+
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
