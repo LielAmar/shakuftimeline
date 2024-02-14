@@ -1,24 +1,27 @@
-import Image from "next/image";
-
 import { Article } from "@/types/article";
+
+import ClosedArticle from "./ClosedArticle";
+import OpenArticle from "./OpenArticle";
 
 const ArticleWrapper = ({
   article,
-  index,
+  isOpen,
+  setIsOpen,
 }: {
   article: Article;
-  index: number;
+  isOpen: boolean;
+  setIsOpen: (value: boolean) => void;
 }) => {
   return (
     <div
-      className={`col-start-3 col-end-3 row-start-${index} row-end-${index}`}
+      className="cursor-pointer rounded-lg bg-white
+        px-7 py-1 w-[30rem] h-full
+        drop-shadow-[0_12px_12px_rgba(0,0,0,0.25)] "
+      onClick={() => setIsOpen(!isOpen)}
     >
-      <p>This is an article</p>
-      <h1>{article.title}</h1>
+      {!isOpen && <ClosedArticle article={article} />}
 
-      <h3>{article.content}</h3>
-
-      <a href={`${article.full_article}`}>Read more</a>
+      {isOpen && <OpenArticle article={article} />}
     </div>
   );
 };
