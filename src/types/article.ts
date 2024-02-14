@@ -1,12 +1,8 @@
-export type Article = {
-  id: string;
-  
-  title: string;
-  content: string;
-  main_photo: string;
+import { Content } from './content';
 
-  date: string;
-  category: string;
+export interface Article extends Content {
+  content: string;
 
   full_article: string;
+  main_picture: string;
 }

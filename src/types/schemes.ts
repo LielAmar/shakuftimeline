@@ -1,11 +1,12 @@
 import { Article } from "@/types/article";
-import { Category } from "@/types/category";
+import { Event } from "@/types/event";
 
 export type DetailsScheme = {
   page_name: string;
   
   page_title: string;
   cover_photo: string;
+  logo_url: string;
 
   header: {
     text: string;
@@ -17,9 +18,7 @@ export type DetailsScheme = {
 }
 
 export type ContentScheme = {
-  categories: {
-    [key: string]: Category;
-  }
+  events: Event[],
 
   articles: Article[]
 }
