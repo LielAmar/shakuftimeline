@@ -53,7 +53,7 @@ const Header = () => {
     // </div>
 
     <div className="flex flex-col flex-start w-full">
-      <div className="flex flex-row items-start gap-10 items-center">
+      <div className="flex flex-row items-start gap-10">
         <Image
           className=""
           src={details.logo_url}
